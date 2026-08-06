@@ -62,6 +62,6 @@ public class LevelOrderBinaryTreeIterator<ValueType>
     }
 
     @Override
-    public void buildTreeFromSequence(List<BinaryNode<ValueType>> nodes)
+    public void buildTreeFromSequence(List<BinaryNode<ValueType>> nodes) {
     }
 }

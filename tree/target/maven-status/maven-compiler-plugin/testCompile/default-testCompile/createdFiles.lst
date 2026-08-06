@@ -1,0 +1,4 @@
+sks\dsa\tree\bst\base\iterator\binaryTree\ordered\InOrderBinaryTreeIteratorTest.class
+sks\dsa\tree\bst\base\iterator\strategy\binaryTree\PreOrderStrategyTest.class
+sks\dsa\tree\bst\base\iterator\strategy\StrategyBasedTreeIteratorTest.class
+sks\dsa\tree\bst\base\node\binaryTree\searchTree\DefaultBinarySearchNodeImplTest.class
