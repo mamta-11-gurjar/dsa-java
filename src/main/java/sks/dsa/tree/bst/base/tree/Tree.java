@@ -18,6 +18,9 @@ public interface Tree<ValueType,
 
     /**
      * @return current tree's max depth
+     *
+     *
+     * 
      */
     int getMaxTreeDepth();
 
