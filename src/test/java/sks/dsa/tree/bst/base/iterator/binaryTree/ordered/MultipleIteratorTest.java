@@ -45,7 +45,6 @@ class MultipleIteratorTest {
         return new DefaultBinarySearchTreeImpl<>(root);
     }
 
-
     @Test
     void testOneIteratorDoesNotAffectAnother() {
 
@@ -54,45 +53,28 @@ class MultipleIteratorTest {
         PreOrderBinaryTreeIterator<Integer> preOrder =
                 new PreOrderBinaryTreeIterator<>(tree);
 
-        PostOrderBinaryTreeIterator<Integer> postOrder =
-                new PostOrderBinaryTreeIterator<>(tree);
-
-        assertEquals(4, preOrder.next().getValue());
-        assertEquals(2, preOrder.next().getValue());
-
-        assertEquals(1, postOrder.next().getValue());
-        assertEquals(3, postOrder.next().getValue());
-
-        assertEquals(1, preOrder.next().getValue());
-
-        assertEquals(2, postOrder.next().getValue());
-    }
-
-    @Test
-    void testIteratorsCanBePausedAndResumed() {
-
-        BinarySearchTree<Integer> tree = createTree();
-
-        PreOrderBinaryTreeIterator<Integer> preOrder =
-                new PreOrderBinaryTreeIterator<>(tree);
-
-        PostOrderBinaryTreeIterator<Integer> postOrder =
-                new PostOrderBinaryTreeIterator<>(tree);
-
-        InOrderBinaryTreeIterator<Integer> InOrder =
+        InOrderBinaryTreeIterator<Integer> inOrder =
                 new InOrderBinaryTreeIterator<>(tree);
 
+        PostOrderBinaryTreeIterator<Integer> postOrder =
+                new PostOrderBinaryTreeIterator<>(tree);
 
         assertEquals(4, preOrder.next().getValue());
         assertEquals(2, preOrder.next().getValue());
 
         assertEquals(1, postOrder.next().getValue());
         assertEquals(3, postOrder.next().getValue());
-        
+
+        assertEquals(1, inOrder.next().getValue());
+        assertEquals(2, inOrder.next().getValue());
+
         assertEquals(1, preOrder.next().getValue());
         assertEquals(3, preOrder.next().getValue());
 
         assertEquals(2, postOrder.next().getValue());
         assertEquals(5, postOrder.next().getValue());
+
+        assertEquals(3, inOrder.next().getValue());
+        assertEquals(4, inOrder.next().getValue());
     }
 }
