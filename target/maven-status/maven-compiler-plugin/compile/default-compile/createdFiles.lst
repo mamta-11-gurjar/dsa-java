@@ -11,6 +11,7 @@ sks\dsa\tree\bst\base\iterator\binaryTree\BinaryTreeIterator.class
 sks\dsa\tree\bst\base\tree\binaryTree\searchTree\DefaultBinarySearchTreeImpl.class
 sks\dsa\tree\bst\base\iterator\binaryTree\ordered\PreOrderBinaryTreeIterator.class
 sks\dsa\tree\bst\base\tree\binaryTree\searchTree\BinarySearchTree.class
+sks\dsa\tree\bst\base\iterator\binaryTree\ordered\PostOrderBinaryTreeIterator.class
 sks\dsa\tree\bst\base\tree\binaryTree\BinaryTree.class
 sks\dsa\tree\bst\base\iterator\TreeIterator.class
 sks\dsa\tree\bst\base\node\Node.class

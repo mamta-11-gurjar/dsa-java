@@ -55,7 +55,7 @@ public class PostOrderBinaryTreeIterator<ValueType>
         if (!hasNext()) {
             throw new NoSuchElementException("No more elements in the tree traversal");
         }
-,
+
         BinaryNode<ValueType> currentNode = outputStack.pop();
         position++;
         return currentNode;
