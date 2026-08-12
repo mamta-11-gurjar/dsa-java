@@ -4,4 +4,5 @@ sks\dsa\tree\bst\base\iterator\binaryTree\ordered\LevelOrderBinaryTreeIteratorTe
 sks\dsa\tree\bst\base\iterator\binaryTree\ordered\LevelOrderBinaryTreeIteratorTest.class
 sks\dsa\tree\bst\base\iterator\binaryTree\ordered\PostOrderBinaryTreeIteratorTest.class
 sks\dsa\tree\bst\base\node\binaryTree\searchTree\DefaultBinarySearchNodeImplTest.class
+sks\dsa\tree\bst\base\iterator\binaryTree\ordered\MultipleIteratorsUsingMultipleThreadsTest.class
 sks\dsa\tree\bst\base\iterator\binaryTree\ordered\MultipleIteratorTest.class
