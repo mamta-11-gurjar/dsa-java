@@ -1,4 +1,8 @@
 sks\dsa\tree\bst\base\iterator\binaryTree\ordered\InOrderBinaryTreeIteratorTest.class
-sks\dsa\tree\bst\base\iterator\strategy\binaryTree\PreOrderStrategyTest.class
-sks\dsa\tree\bst\base\iterator\strategy\StrategyBasedTreeIteratorTest.class
+sks\dsa\tree\bst\base\iterator\binaryTree\ordered\PreOrderBinaryTreeIteratorTest.class
+sks\dsa\tree\bst\base\iterator\binaryTree\ordered\LevelOrderBinaryTreeIteratorTest$1.class
+sks\dsa\tree\bst\base\iterator\binaryTree\ordered\LevelOrderBinaryTreeIteratorTest.class
+sks\dsa\tree\bst\base\iterator\binaryTree\ordered\PostOrderBinaryTreeIteratorTest.class
 sks\dsa\tree\bst\base\node\binaryTree\searchTree\DefaultBinarySearchNodeImplTest.class
+sks\dsa\tree\bst\base\iterator\binaryTree\ordered\MultipleIteratorsUsingMultipleThreadsTest.class
+sks\dsa\tree\bst\base\iterator\binaryTree\ordered\MultipleIteratorTest.class

@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import sks.dsa.tree.bst.base.node.binaryTree.BinaryNode;
 import sks.dsa.tree.bst.base.node.binaryTree.searchTree.BinarySearchNode;
 import sks.dsa.tree.bst.base.node.binaryTree.searchTree.DefaultBinarySearchNodeImpl;
-import sks.dsa.tree.bst.base.node.binaryTree.searchTree.DefaultBinarySearchNodeImpl;
 import sks.dsa.tree.bst.base.tree.binaryTree.searchTree.DefaultBinarySearchTreeImpl;
 import sks.dsa.tree.bst.base.tree.binaryTree.BinaryTree;
 
@@ -33,6 +32,10 @@ class LevelOrderBinaryTreeIteratorTest {
             @Override public int getNumberOfChildren(){ return 0; }
             @Override public int size(){ return 0; }
             @Override public java.util.Iterator<BinaryNode<Integer>> iterator(){ return new java.util.ArrayList<BinaryNode<Integer>>().iterator(); }
+            @Override public boolean isTreeBalanced(){ return false; }
+            @Override public boolean isTreeComplete(){ return false; }
+            @Override public BinaryTree<Integer> getLeftSubTree(){ return null; }
+            @Override public BinaryTree<Integer> getRightSubTree(){ return null; }
         };
         LevelOrderBinaryTreeIterator<Integer> it = new LevelOrderBinaryTreeIterator<>(emptyTree);
         assertTrue(collectValues(it).isEmpty());
@@ -118,6 +121,7 @@ class LevelOrderBinaryTreeIteratorTest {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     void testLargeBreadth() {
         int n = 15;
         DefaultBinarySearchNodeImpl<Integer>[] nodes = new DefaultBinarySearchNodeImpl[n];
