@@ -68,7 +68,7 @@ class MultipleIteratorFunctionalTest {
                 .limit(2)
                 .collect(Collectors.toList());
 
-        List<Integer> postOrderResult = postOrder.stream()
+        List<Integer> postOrderResult = postOrder.stream()+
                 .map(BinaryNode::getValue)
                 .limit(2)
                 .collect(Collectors.toList());
