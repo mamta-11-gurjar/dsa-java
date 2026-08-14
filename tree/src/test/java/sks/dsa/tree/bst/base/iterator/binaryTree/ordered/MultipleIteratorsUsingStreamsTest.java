@@ -64,6 +64,7 @@ class MultipleIteratorFunctionalTest {
                 new PostOrderBinaryTreeIterator<>(tree);
 
         List<Integer> preOrderResult = preOrder.stream()
+                .Parrallel
                 .map(BinaryNode::getValue)
                 .limit(2)
                 .collect(Collectors.toList());
