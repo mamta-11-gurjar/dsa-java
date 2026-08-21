@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: sks.dsa.tree.bst.base.tree.displayTree.BinaryTreeStringerTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.060 s -- in sks.dsa.tree.bst.base.tree.displayTree.BinaryTreeStringerTest

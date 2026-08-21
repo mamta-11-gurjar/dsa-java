@@ -1,56 +1,28 @@
 package sks.dsa.tree.bst.base.tree.displayTree;
 
-import sks.dsa.tree.bst.base.node.binaryTree.BinaryNode;
-import sks.dsa.tree.bst.base.tree.binaryTree.BinaryTree;
+import sks.dsa.tree.bst.base.tree.binaryTree.searchTree.BinarySearchTree;
 
-public class DefaultCliTreeVisualizer<T>
-        implements CliTreeVisualizer<T> {
+/**
+ * Default CLI implementation for displaying a binary search tree.
+ *
+ * @param <T> type of value stored in the tree
+ */
+public class DefaultCliTreeVisualizer<T extends Comparable<T>>
+        implements CliTreeVisualizer<BinarySearchTree<T>> {
 
-    @Override
-    public void visualizeTree(BinaryTree<T> tree) {
-        if (tree == null || tree.getRoot() == null) {
-            System.out.println("Tree is empty.");
-            return;
-        }
+    private final TreeStringer<BinarySearchTree<T>> treeStringer;
 
-        printTree(tree.getRoot(), "", true);
+    public DefaultCliTreeVisualizer(
+            TreeStringer<BinarySearchTree<T>> treeStringer) {
+
+        this.treeStringer = treeStringer;
     }
 
-    private void printTree(
-            BinaryNode<T> node,
-            String prefix,
-            boolean isLast) {
-
-        if (node == null) {
-            return;
-        }
+    @Override
+    public void visualizeTree(BinarySearchTree<T> tree) {
 
         System.out.println(
-                prefix +
-                        (isLast ? "└── " : "├── ") +
-                        node.getValue()
+                treeStringer.stringify(tree)
         );
-
-        BinaryNode<T> left = node.getLeftChild();
-        BinaryNode<T> right = node.getRightChild();
-
-        if (left != null || right != null) {
-
-            if (left != null) {
-                printTree(
-                        left,
-                        prefix + (isLast ? "    " : "│   "),
-                        right == null
-                );
-            }
-
-            if (right != null) {
-                printTree(
-                        right,
-                        prefix + (isLast ? "    " : "│   "),
-                        true
-                );
-            }
-        }
     }
 }

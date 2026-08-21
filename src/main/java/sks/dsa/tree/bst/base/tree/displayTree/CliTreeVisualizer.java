@@ -1,13 +1,16 @@
 package sks.dsa.tree.bst.base.tree.displayTree;
 
-import sks.dsa.tree.bst.base.tree.binaryTree.BinaryTree;
-
 /**
- * Used to visualize a binary tree on the command line.
+ * Displays a tree on the command line.
  *
- * @param <T> the type of value stored in the tree
+ * @param <T> type of tree
  */
-public interface CliTreeVisualizer<T>
-        extends TreeVisualizer<BinaryTree<T>> {
+public interface CliTreeVisualizer<T> {
 
+    /**
+     * Displays the given tree.
+     *
+     * @param tree tree to display
+     */
+    void visualizeTree(T tree);
 }

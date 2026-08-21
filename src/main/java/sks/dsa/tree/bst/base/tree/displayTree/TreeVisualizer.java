@@ -5,7 +5,6 @@ package sks.dsa.tree.bst.base.tree.displayTree;
  *
  * @param <T> the type of tree to be displayed
  */
-
 public interface TreeVisualizer<T> {
 
     /**
@@ -13,6 +12,5 @@ public interface TreeVisualizer<T> {
      *
      * @param tree the tree that needs to be displayed
      */
-
     void visualizeTree(T tree);
 }

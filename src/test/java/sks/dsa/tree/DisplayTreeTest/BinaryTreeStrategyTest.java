@@ -6,12 +6,9 @@ import sks.dsa.tree.bst.base.node.binaryTree.searchTree.DefaultBinarySearchNodeI
 import sks.dsa.tree.bst.base.tree.binaryTree.searchTree.BinarySearchTree;
 import sks.dsa.tree.bst.base.tree.binaryTree.searchTree.DefaultBinarySearchTreeImpl;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class DefaultCliTreeVisualizerTest {
+class BinaryTreeStrategyTest {
 
     private BinarySearchTree<Integer> createTree() {
 
@@ -49,16 +46,55 @@ class DefaultCliTreeVisualizerTest {
     }
 
     @Test
-    void shouldDisplayTreeOnCli() {
+    void shouldConvertBinaryTreeToString() {
 
         BinarySearchTree<Integer> tree = createTree();
 
-        TreeStringer<BinarySearchTree<Integer>> treeStringer =
+        TreeStringer<BinarySearchTree<Integer>> stringer =
                 new BinaryTreeStrategy<>();
 
-        DefaultCliTreeVisualizer<Integer> visualizer =
-                new DefaultCliTreeVisualizer<>(treeStringer);
+        String actual = stringer.stringify(tree);
 
-        visualizer.visualizeTree(tree);
+        String expected =
+                "└── 4" + System.lineSeparator() +
+                        "    ├── 2" + System.lineSeparator() +
+                        "    │   ├── 1" + System.lineSeparator() +
+                        "    │   └── 3" + System.lineSeparator() +
+                        "    └── 6" + System.lineSeparator() +
+                        "        ├── 5" + System.lineSeparator() +
+                        "        └── 7" + System.lineSeparator();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldReturnEmptyMessageForNullTree() {
+
+        TreeStringer<BinarySearchTree<Integer>> stringer =
+                new BinaryTreeStrategy<>();
+
+        String actual = stringer.stringify(null);
+
+        assertEquals("Tree is empty.", actual);
+    }
+
+    @Test
+    void shouldConvertSingleNodeTreeToString() {
+
+        BinarySearchNode<Integer> root =
+                new DefaultBinarySearchNodeImpl<>(10);
+
+        BinarySearchTree<Integer> tree =
+                new DefaultBinarySearchTreeImpl<>(root);
+
+        TreeStringer<BinarySearchTree<Integer>> stringer =
+                new BinaryTreeStrategy<>();
+
+        String actual = stringer.stringify(tree);
+
+        String expected =
+                "└── 10" + System.lineSeparator();
+
+        assertEquals(expected, actual);
     }
 }
